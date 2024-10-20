@@ -698,3 +698,4 @@ __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 touch insert_data.sh
 sudo chmod +x insert_data.sh
 ls --color=auto -l
+./insert_data.sh
