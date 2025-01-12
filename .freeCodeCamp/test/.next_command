@@ -429,3 +429,4 @@ declare -p IFS
 bash insert_data.sh
 ./insert_data.sh
 ./insert_data.sh
+./insert_data.sh
