@@ -506,3 +506,4 @@ __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 ls --color=auto -l
 ./insert_data.sh
 cp courses.csv courses_test.csv
+./insert_data.sh
