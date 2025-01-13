@@ -3,8 +3,7 @@
 # Script to insert data from courses.csv and students.csv into students database
 
 PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"
-echo $($PSQL "TRUNCATE  students, majors, courses, majors_courses
-")
+echo $($PSQL "TRUNCATE  students, majors, courses, majors_courses")
 
 cat courses_test.csv | while IFS="," read MAJOR COURSE
 do
@@ -40,7 +39,7 @@ do
         echo Inserted into courses, $COURSE
       fi
       # get new course_id
-
+      COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course=('$COURSE')")
     fi
 
     # insert into majors_courses
