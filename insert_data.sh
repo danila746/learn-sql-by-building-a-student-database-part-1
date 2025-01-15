@@ -51,21 +51,24 @@ do
     fi
   fi
 done
+
 cat students_test.csv | while IFS="," read FIRST LAST MAJOR GPA
 do
   if [[ $FIRST != "first_name" ]]
   then
     # get major_id
-    MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR' ")
-    
+    MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'") 
+
     # if not found
     if [[ -z $MAJOR_ID ]]
     then
       # set to null
       MAJOR_ID=null
-      echo $MAJOR_ID
-    fi
-    # insert student
+    fi   
+
     
-  fi  
+
+    # insert student
+
+  fi
 done
